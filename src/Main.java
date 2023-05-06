@@ -26,6 +26,19 @@ public class Main {
     public static void task2() {
         System.out.println("Решение задачи №2");
         int[] arr = generateRandomArray();
-        int sum = 0;
+        int max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        System.out.println("Максимальная сумма трат за день " + max);
+        int min = max;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        System.out.println("Минимальная сумма трат за день составила " + min);
     }
 }
