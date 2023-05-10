@@ -1,8 +1,12 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         task1();
         task2();
         task3();
+        task4();
     }
 
     public static int[] generateRandomArray() {
@@ -53,5 +57,22 @@ public class Main {
         sum += sum * 100;
         double sr = (sum / 30) / 100;
         System.out.println("Средняя сумма трат за месяц составила " + sr);
+    }
+    public static void task4() {
+        System.out.println("Решение задачи №4");
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char element;
+        char index = 0;
+        for (char i = 0; i < reverseFullName.length; i++) {
+           element=reverseFullName[i];
+           index=i;
+            while (index > 0 && reverseFullName[index - 1] > element) {
+reverseFullName[index]=reverseFullName[index-1];
+index--;
+reverseFullName[index]=element;
+            }
+
+        }
+        System.out.println(Arrays.toString(new char[]{reverseFullName[index]}));
     }
 }
