@@ -7,6 +7,7 @@ public class Main {
         task2();
         task3();
         task4();
+        task4_1();
     }
 
     public static int[] generateRandomArray() {
@@ -58,21 +59,26 @@ public class Main {
         double sr = (sum / 30) / 100;
         System.out.println("Средняя сумма трат за месяц составила " + sr);
     }
+
     public static void task4() {
         System.out.println("Решение задачи №4");
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        char element;
-        char index = 0;
-        for (char i = 0; i < reverseFullName.length; i++) {
-           element=reverseFullName[i];
-           index=i;
-            while (index > 0 && reverseFullName[index - 1] > element) {
-reverseFullName[index]=reverseFullName[index-1];
-index--;
-reverseFullName[index]=element;
-            }
-
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length-1; i>=0; i--) {
+            System.out.print(reverseFullName[i]);
         }
-        System.out.println(Arrays.toString(new char[]{reverseFullName[index]}));
+        System.out.println();
+    }
+    public static void task4_1(){
+        System.out.println("Решение задачи №4 второй способ ");
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = 0; i < reverseFullName.length; i++) {
+            for (int j = i + 1; j < reverseFullName.length; j++) {
+                char tmp = 0;
+                    tmp = reverseFullName[i];
+                    reverseFullName[i] = reverseFullName[j];
+                    reverseFullName[j] = tmp;
+            }
+            System.out.print(reverseFullName[i]);
+        }
     }
 }
