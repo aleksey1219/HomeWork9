@@ -63,20 +63,21 @@ public class Main {
     public static void task4() {
         System.out.println("Решение задачи №4");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length-1; i>=0; i--) {
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
         }
         System.out.println();
     }
-    public static void task4_1(){
+
+    public static void task4_1() {
         System.out.println("Решение задачи №4 второй способ ");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         for (int i = 0; i < reverseFullName.length; i++) {
             for (int j = i + 1; j < reverseFullName.length; j++) {
                 char tmp = 0;
-                    tmp = reverseFullName[i];
-                    reverseFullName[i] = reverseFullName[j];
-                    reverseFullName[j] = tmp;
+                tmp = reverseFullName[i];
+                reverseFullName[i] = reverseFullName[j];
+                reverseFullName[j] = tmp;
             }
             System.out.print(reverseFullName[i]);
         }
